@@ -54,7 +54,7 @@ imagen de representacion de la app y herramientas de VScode
 
 ## Demostracion de app y herramientas de Vscode
 
-link: https://database-client.com/#/home
+link: https://www.youtube.com/watch?v=ztiQ58xgfSY
 
 ## Expresiones de Gratitud 🎁
 

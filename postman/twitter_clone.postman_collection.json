@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "d08ae421-5707-4c54-bd66-8e1d7704239b",
+		"name": "twitter_clone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7389724"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "kenman"
+								},
+								{
+									"key": "fullName",
+									"value": "Ken Man"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								},
+								{
+									"key": "email",
+									"value": "ken@email.com"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\":\"user1\",\n  \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "auth/logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:5000/api/auth/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "auth/me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/auth/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"me"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "user1",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "users/follow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:5000/api/users/follow/672b8c29baaa4c0a6dff1d34"
+					},
+					"response": []
+				},
+				{
+					"name": "users/suggested",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/users/suggested"
+					},
+					"response": []
+				},
+				{
+					"name": "users/update profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzJiOGMyOWJhYWE0YzBhNmRmZjFkMzQiLCJpYXQiOjE3MzE5NzMzOTAsImV4cCI6MTczMzI2OTM5MH0.pL_ggkVF6wKE3R3MrvIxirIOkiSNW6u9O6EJ5r2qc5s;"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "user1@1.com"
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/users/update"
+					},
+					"response": []
+				},
+				{
+					"name": "users/user profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/users/profile/user1"
+					},
+					"response": []
+				},
+				{
+					"name": "users/delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/delete"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "posts/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "My 3 post jonacell"
+								},
+								{
+									"key": "img",
+									"value": "imgulr.com",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/posts/create"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "My second post",
+									"disabled": true
+								},
+								{
+									"key": "img",
+									"value": "imgulr.com",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/posts/6706b47815115cb2f8bfca2a"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "My second comment"
+								},
+								{
+									"key": "img",
+									"value": "imgulr.com",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/posts/comment/670b8402efe6e15102ebdd5f"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/like",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:5000/api/posts/like/670b8402efe6e15102ebdd5f"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/getAllPosts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "text",
+									"value": "My second post",
+									"disabled": true
+								},
+								{
+									"key": "img",
+									"value": "imgulr.com",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://localhost:5000/api/posts/all"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/getLikedPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/posts/likes/670b83f1efe6e15102ebdd5a"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/getFollowingPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/posts/following"
+					},
+					"response": []
+				},
+				{
+					"name": "posts/getUserPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/posts/user/joedoe"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification",
+			"item": [
+				{
+					"name": "notifications/getNotifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/notifications"
+					},
+					"response": []
+				},
+				{
+					"name": "notifications/deleteNotifications",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/api/notifications"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

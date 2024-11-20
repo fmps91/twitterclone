@@ -1,0 +1,136 @@
+example of youtube -------
+https://www.youtube.com/watch?v=4GUVz2psWUg&t=227s
+
+comands access-----
+nvm use 20 && npm run dev 
+
+
+frontend------
+
+crea un proyecto en la misma carpeta
+npm create vite@latest .
+
+crea un proyecto definiendo una carpeta
+npm create vite@latest 
+
+snipes
+imr  →	import React from 'react'
+imrse  →	import React, { useState, useEffect } from 'react'
+rfc
+rfce
+
+install tailwind css with vite
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+file conf tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+add 3 lines app.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+upgrade react and libraries
+npm i react@latest react-dom@latest
+
+update all dependecies
+npx npm-check-updates
+
+This command will check every installed dependency and compare the current version with the latest version in the npm registry. It is printed out into a table outlining available versions.
+npm outdated
+
+To upgrade dependencies, you just need to run:
+ncu --upgrade
+// or 
+ncu -u
+
+
+Interactive mode allows you to select specific packages to update. By default, all packages are selected.
+ncu --interactive
+// or 
+ncu -i
+
+
+docker------ 
+docker start mongodb
+docker stop mongodb
+docker exec -it mongodb sh
+
+mongodb--------
+si tu base de datos es test digitar
+mongosh
+
+673dbab365e679e90a196110
+sino ejemplo
+mongosh "mongodb://127.0.0.1:27017/twitter"
+
+eliminar los registros de la base de datos
+db.users.remove({})
+db.posts.remove({})
+db.notifications.remove({})
+db.users.find()
+
+seleccionar la base de datos
+use database
+
+mostrar las bases de datos
+show dbs
+
+eliminar base de datos
+db.dropDatabase()
+
+backend------
+
+npm i express mongoose jsonwebtoken bcryptjs dotenv cors cookie-parser cloudinary
+
+generate password
+openssl rand -base64 32
+
+lsof -i tcp:5000
+lsof -i tcp:3000
+kill -9 pid
+
+pm2
+npx pm2 start file.js
+npx pm2 list
+npx pm2 delete 0
+npx pm2 monit o npx pm2 monit 0
+npx pm2 logs o npx pm2 logs 0
+
+cypress-----
+
+npx cypress open 
+
+
+k6----------
+//tutorial
+//para ejecutar normalmente
+//k6 run file.js
+//para saber el comando que esatamos ejecutando pero no sabemos los parametros
+//k6 run --help
+//para ejecutar la prueba con 10 usuarios y la duracion de 30 segundos
+//k6 run file.js --vus 10 --duration 30s
+//ejecutar 3 veces un script
+//k6 run file.js -i 3
+//para guardar los resultados en un json
+//k6 run file.js \
+//--out json=test.json
+
+
+readme--------
+permite visualizar el readme
+control + shift + v
+
+

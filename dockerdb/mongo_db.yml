@@ -1,0 +1,16 @@
+version: '3.1'
+
+#docker-compose -f nombre del archivo up -d
+#docker start mongodb
+
+
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0.5-ubi8
+    container_name: mongodb
+    #volumes:
+     #- type: bind
+      # source: ./data
+       #target: /data/db
+    ports:
+      - 27017:27017
